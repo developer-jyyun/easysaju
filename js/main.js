@@ -4,8 +4,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const category = document.getElementById("category");
   const hamburger = document.getElementById("hamburger");
 
+  const mobileHeader = document.querySelector(".mobile-header");
+  const desktopHeader = document.querySelector(".desktop-header");
+
   function isMobile() {
     return window.innerWidth <= 1235; // 모바일~1235px
+  }
+
+  function updateNavDisplay() {
+    if (isMobile()) {
+      nav.style.display = nav.classList.contains("open") ? "flex" : "none";
+      if (mobileHeader) mobileHeader.style.display = "flex";
+      if (desktopHeader) desktopHeader.style.display = "none";
+    } else {
+      nav.style.display = "flex";
+      nav.classList.remove("open");
+      if (mobileHeader) mobileHeader.style.display = "none";
+      if (desktopHeader) desktopHeader.style.display = "flex";
+    }
   }
 
   window.addEventListener("scroll", () => {
@@ -13,44 +29,36 @@ document.addEventListener("DOMContentLoaded", () => {
       window.pageYOffset || document.documentElement.scrollTop;
     const categoryTop = category.offsetTop;
 
-    // header shrink
+    // ✅ 헤더 shrink
     if (currentScroll > 50) {
       header.classList.add("shrink");
     } else {
       header.classList.remove("shrink");
     }
 
-    // ✅ category 영역 지나면 nav 숨기기 (데스크탑만)
+    // ✅ nav 숨김/복구 (데스크탑만)
     if (!isMobile()) {
       if (currentScroll > categoryTop - 80) {
         nav.style.display = "none";
       } else {
-        nav.style.display = "flex"; // 데스크탑 복구
+        nav.style.display = "flex";
       }
     }
   });
 
-  // ✅ 햄버거 클릭 시 nav 토글 (모바일만)
+  // ✅ 햄버거 클릭 시 nav 토글
   hamburger.addEventListener("click", () => {
     if (isMobile()) {
       nav.classList.toggle("open");
+      nav.style.display = nav.classList.contains("open") ? "flex" : "none";
     }
   });
 
   // ✅ 화면 크기 바뀔 때 nav 초기화
-  window.addEventListener("resize", () => {
-    if (!isMobile()) {
-      nav.style.display = "flex";
-      nav.classList.remove("open");
-    } else {
-      nav.style.display = "none";
-    }
-  });
+  window.addEventListener("resize", updateNavDisplay);
+  // ✅ 처음 로드될 때 nav 상태 맞추기
 
-  // ✅ 처음 로드될 때 모바일이면 nav 숨기기
-  if (isMobile()) {
-    nav.style.display = "none";
-  }
+  updateNavDisplay();
 });
 
 // ✅ target=_blank 추가
