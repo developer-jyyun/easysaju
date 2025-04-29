@@ -41,17 +41,19 @@
   background-repeat: no-repeat;
   background-position: center;
   filter: contrast(1.15);
-  /*   animation: rainbowBackground 14s ease-in-out infinite alternate;
   position: relative;
-  overflow: hidden; */
 }
 .bg {
-  background-color: #fff;
+  background-color: #000;
   animation: rainbowBackground 14s ease-in-out infinite alternate;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
 }
 .noise {
   position: absolute;

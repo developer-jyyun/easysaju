@@ -34,12 +34,7 @@
 .font-ttt {
   font-family: "TTTtangsbudaejjigaeB", "Black Han Sans", "맑은고딕";
 }
-.font-title {
-  font-family: "Black Han Sans", "Ownglyph_ryurue-Rg", "맑은고딕";
-}
-.font-sangsang {
-  font-family: "SangSangAnt", "맑은고딕";
-}
+
 .font-score {
   font-family: "S-CoreDream-3Light", "맑은고딕", sans-serif;
 }
@@ -104,9 +99,7 @@ main {
   padding-top: 8%;
   position: relative;
 }
-/* .main {
-  margin-top: 8%;
-} */
+
 .inner-container {
   max-width: 80rem;
   margin: 0 auto;
@@ -114,6 +107,7 @@ main {
 /* 전체 Section 스타일 */
 .section {
   padding: 2rem 1rem;
+  z-index: 1;
 }
 
 /* Section 제목 */
@@ -361,27 +355,6 @@ main {
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 1rem;
-}
-
-/* 내부 링크 텍스트 */
-.bg-img .card-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  line-height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  overflow: hidden;
-}
-
-#yuksin .bg-img {
-}
-#yuksin .bg-img .card-link {
-}
-#yuksin .bg-img .card-link i {
-  background-color: #ff9999;
 }
 
 /* Swiper 버튼 */
