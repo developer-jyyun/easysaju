@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍀선운닷컴 - 선운의 명리터</title>
+
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/dark-ver.css" />
+    <link rel="stylesheet" href="./css/light-ver.css" />
+    <!-- <link rel="stylesheet" href="./css/navy.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="dark-ver font-score">
+    <!-- ✅ 헤더 -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="/" class="logo">선운닷컴 2.0</a>
+        <!-- ✅ 모바일용 로그인/가입 + 햄버거/검색 묶음 -->
+        <div class="mobile-header md:hidden flex flex-col gap-2 w-full mt-2">
+          <div class="flex justify-between items-center w-full">
+            <div class="text-sm flex gap-2 text-white">
+              <a href="#">로그인</a>
+              <span class="text-gray-400">|</span>
+              <a href="#">회원가입</a>
+            </div>
+
+            <div class="flex gap-2 items-center">
+              <button id="hamburger" class="text-white text-2xl">☰</button>
+            </div>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="🔍 검색"
+              class="w-full px-3 py-1 bg-white/10 border border-gray-400 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            />
+          </div>
+        </div>
+
+        <!-- ✅ 데스크탑용 -->
+        <div class="desktop-header hidden md:flex items-center gap-4 text-sm">
+          <a href="#">로그인</a>
+          <span class="text-gray-400">|</span>
+          <a href="#">회원가입</a>
+          <input
+            type="text"
+            placeholder="🔍 검색"
+            class="ml-4 px-3 py-1 bg-white/10 border border-gray/40 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300"
+          />
+        </div>
+        <!-- ✅ GNB 메뉴 -->
+      </div>
+      <nav class="nav">
+        <div
+          class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0 text-sm"
+        >
+          <div class="flex flex-wrap gap-4 font-semibold">
+            <a href="#">육신의 활용</a>
+            <a href="#">오행의 활용</a>
+            <a href="#">격국의 활용</a>
+            <a href="#">명리기초</a>
+            <a href="#">명리잡변</a>
+            <a href="#">현장강의</a>
+          </div>
+          <div class="flex flex-wrap gap-4 text-xs text-white">
+            <a href="#">적립하기</a>
+            <a href="#">질문게시판</a>
+            <a href="#">공지사항</a>
+            <a href="#">선운닷컴 1.0</a>
+            <a href="#">고객센터</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="mobile-header md:hidden flex flex-col gap-2 w-full mt-2">
+      <div class="flex justify-between items-center w-full">
+        <div class="text-sm flex gap-2 text-white">
+          <a href="#">로그인</a>
+          <span class="text-gray-400">|</span>
+          <a href="#">회원가입</a>
+        </div>
+
+        <div class="flex gap-2 items-center">
+          <button id="hamburger" class="text-white text-2xl">☰</button>
+        </div>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="🔍 검색"
+          class="w-full px-3 py-1 bg-white/10 border border-gray-400 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300"
+        />
+      </div>
+    </div>
+    <!-- ✅ 메인 -->
+    <main class="pb-10">
+      <div class="bg"></div>
+      <!-- 🎥 Hero Section -->
+      <section class="hero-section">
+        <div class="noise"></div>
+        <div class="inner">
+          <div class="brush-bg"></div>
+          <p class="font-wanju inner-top">
+            📢 매주 화요일, 오프라인 강좌를 온라인에서!
+          </p>
+          <div class="inner-con">
+            <img class="tv" src="/assets/imgs/tv.gif" alt="선운의 명리터 tv" />
+            <div class="w-full">
+              <div class="hero-title-wrap">
+                <img src="/assets/imgs/star.png" alt="반짝이" class="sparkle" />
+                <h1 class="hero-title stroke font-ttt">
+                  현장강의<br />새롭게 오픈!
+                </h1>
+                <h1 class="hero-title fill font-ttt">
+                  현장강의<br />새롭게 오픈!
+                </h1>
+              </div>
+              <button class="btn">강의 보러 가기 ></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="inner-container">
+        <!-- 명리테마 -->
+        <section id="theme" class="px-4 py-12">
+          <h2 class="text-xl font-bold mb-8 flex items-center gap-2">
+            💡 당신의 사주를 더 재미있게 해석하는 방법
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 테마 카드 -->
+            <a href="/Sub/Lec_Money.asp" class="block">
+              <div
+                class="bg-[#cdf1d8] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover opacity-90 transition"
+              >
+                <div class="p-4 bg-white rounded-full text-2xl mb-3">💵</div>
+                <h3 class="text-lg font-semibold mb-1">돈에 대하여</h3>
+                <p class="text-xs text-gray-700">
+                  돈은 어떻게 벌어야 할까?<br />사주로 찾는 당신만의 방식
+                </p>
+              </div>
+            </a>
+            <a href="http://easysaju.com/Sub/Lec_Psychology.asp" class="block">
+              <div
+                class="bg-[#d3f2ff] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover opacity-90 transition"
+              >
+                <div class="p-4 bg-white rounded-full text-2xl mb-3">👀</div>
+                <h3 class="text-lg font-semibold mb-1">사주와 심리</h3>
+                <p class="text-xs text-gray-700">
+                  마음은 왜 그렇게 작용할까?<br />
+                  사주의 흐름 속에서 마음을 읽는 법
+                </p>
+              </div>
+            </a>
+            <a href="http://easysaju.com/Sub/Lec_Time_2.asp" class="block">
+              <div
+                class="bg-[#edf0ff] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover opacity-90 transition"
+              >
+                <div class="p-4 bg-white rounded-full text-2xl mb-3">🍀</div>
+                <h3 class="text-lg font-semibold mb-1">좋은 운이란 무엇인가</h3>
+                <p class="text-xs text-gray-700">
+                  노력하면 좋은 운이 오는가?<br />
+                  행운은 사주의 균형이 만들어낸 타이밍
+                </p>
+              </div>
+            </a>
+            <a href="http://easysaju.com/Sub/Lec_Love.asp" class="block">
+              <div
+                class="bg-[#ffeded] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover opacity-90 transition"
+              >
+                <div class="p-4 bg-white rounded-full text-2xl mb-3">💘</div>
+                <h3 class="text-lg font-semibold mb-1">궁합</h3>
+                <p class="text-xs text-gray-700">
+                  우리는 왜 끌리고 왜 멀어질까?<br />
+                  육신, 일간, 계절별 관점에서 보는 궁합
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+        <!-- 추천강의 -->
+        <section id="featured" class="px-4 py-12">
+          <h2 class="text-xl font-bold mb-8 flex items-center gap-2">
+            🔥 추천 강의
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="#" class="block group">
+              <div class="gradient-border transition-all rounded-lg shadow-lg">
+                <div class="p-6 bg-[#070a16] rounded-lg">
+                  <h3 class="text-lg font-bold text-gradient">월의 출발점</h3>
+                  <p class="text-sm text-gray-300">월이라는 시작의 의미</p>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block">
+              <div class="gradient-border transition-all rounded-lg shadow-lg">
+                <div class="p-6 bg-[#070a16] rounded-lg">
+                  <h3 class="text-lg font-bold text-gradient">월의 해석</h3>
+                  <p class="text-sm text-gray-300">
+                    '월'이 사주 전체의 판도를 바꾼다
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="http://www.easysaju.com/Sub/Lec_jijangan.asp"
+              class="block"
+            >
+              <div class="gradient-border transition-all rounded-lg shadow-lg">
+                <div class="p-6 bg-[#070a16] rounded-lg">
+                  <h3 class="text-lg font-bold text-gradient">지장간의 해법</h3>
+                  <p class="text-sm text-gray-300">
+                    지장간 속에 의도가 있고 원인이 있다.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block">
+              <div class="gradient-border transition-all rounded-lg shadow-lg">
+                <div class="p-6 bg-[#070a16] rounded-lg">
+                  <h3 class="text-lg font-bold text-gradient">십간에 대하여</h3>
+                  <p class="text-sm text-gray-300">
+                    십간의 의미와 심도 깊은 해석
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block">
+              <div class="gradient-border transition-all rounded-lg shadow-lg">
+                <div class="p-6 bg-[#070a16] rounded-lg">
+                  <h3 class="text-lg font-bold text-gradient">천간의 갯수</h3>
+                  <p class="text-sm text-gray-300">천간의 능력을 보다</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="http://www.easysaju.com/Sub/Lec_HapChung.asp"
+              class="block"
+            >
+              <div class="gradient-border transition-all rounded-lg shadow-lg">
+                <div class="p-6 bg-[#070a16] rounded-lg">
+                  <h3 class="text-lg font-bold text-gradient">합충이란</h3>
+                  <p class="text-sm text-gray-300">
+                    합과 충의 다양한 현상과 해석법
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- 🛰️ 카테고리 영역 (PC/모바일 반응형) -->
+        <section id="category" class="px-4 py-12 relative">
+          <!-- PC 버전 -->
+          <div class="hidden md:grid grid-cols-5 gap-4">
+            <a
+              href="#yuksin"
+              class="w-[200px] h-[120px] relative group border-4 border-[#fdffe7] hover:border-white rounded-lg overflow-hidden shadow-lg cursor-pointer bg-[#0d111c] flex items-center justify-center"
+            >
+              <h2
+                class="text-xl text-white text-center font-bold z-10 transition-all duration-300 group-hover:text-white"
+              >
+                육신의 활용
+              </h2>
+              <video
+                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 brightness-50 group-hover:brightness-100"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                ness-100" autoplay loop muted playsinline>
+                <source src="/assets/mov/girl-op.mp4" type="video/mp4" />
+              </video>
+            </a>
+
+            <a
+              href="#ohaeng"
+              class="w-[200px] h-[120px] relative group border-4 border-[#fdffe7;] hover:border-white rounded-lg overflow-hidden shadow-lg cursor-pointer bg-[#0d111c;] flex items-center justify-center"
+            >
+              <h2
+                class="text-xl text-white text-center font-bold z-10 transition-all duration-300 group-hover:text-white"
+              >
+                오행의 활용
+              </h2>
+              <video
+                class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 brightness-50 group-hover:brightness-100"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src="/assets/mov/rainbow-op.mp4" type="video/mp4" />
+              </video>
+            </a>
+
+            <a
+              href="#gyeokguk"
+              class="w-[200px] h-[120px] relative group border-4 border-[#fdffe7;] hover:border-white rounded-lg overflow-hidden shadow-lg cursor-pointer bg-[#0d111c;] flex items-center justify-center"
+            >
+              <h2
+                class="text-xl text-white text-center font-bold z-10 transition-all duration-300 group-hover:text-white"
+              >
+                격국의 활용
+              </h2>
+              <video
+                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 brightness-50 group-hover:brightness-100"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src="/assets/mov/nature-op.mp4" type="video/mp4" />
+              </video>
+            </a>
+
+            <a
+              href="#basic"
+              class="w-[200px] h-[120px] relative group border-4 border-[#fdffe7;] hover:border-white rounded-lg overflow-hidden shadow-lg cursor-pointer bg-[#0d111c;] flex items-center justify-center"
+            >
+              <h2
+                class="text-xl text-white text-center font-bold z-10 transition-all duration-300 group-hover:text-white"
+              >
+                명리기초
+              </h2>
+              <video
+                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 brightness-50 group-hover:brightness-100"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src="/assets/mov/start-op.mp4" type="video/mp4" />
+              </video>
+            </a>
+
+            <a
+              href="#jabbyun"
+              class="w-[200px] h-[120px] relative group border-4 border-[#fdffe7;] hover:border-white rounded-lg overflow-hidden shadow-lg cursor-pointer bg-[#0d111c;] flex items-center justify-center"
+            >
+              <h2
+                class="text-xl text-white text-center font-bold z-10 transition-all duration-300 group-hover:text-white"
+              >
+                명리잡변
+              </h2>
+              <video
+                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 brightness-50 group-hover:brightness-100"
+                autoplay
+                loop
+                muted
+                playsinline
+              >
+                <source src="/assets/mov/tape-op.mp4" type="video/mp4" />
+              </video>
+            </a>
+          </div>
+          <!-- 모바일 버전 -->
+          <div
+            class="md:hidden grid grid-cols-5 gap-2 text-xs text-white font-bold text-center"
+          >
+            <a href="#yuksin" class="block">육신</a>
+            <a href="#ohaeng" class="block">오행</a>
+            <a href="#gyeokguk" class="block">격국</a>
+            <a href="#basic" class="block">명리기초</a>
+            <a href="#jabbyun" class="block">명리잡변</a>
+          </div>
+        </section>
+        <!-- 🎯 육신의 활용 Section -->
+        <section id="yuksin" class="section">
+          <h2 class="section-title">🎯 육신의 활용</h2>
+          <div class="swiper yuksinSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Yuk_Use.asp"
+                  class="card-link"
+                >
+                  <i class="ri-fire-line card-icon"></i>
+                  <span class="card-title">육신의 활용</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Yuk_Theory.asp"
+                  class="card-link"
+                >
+                  <i class="ri-key-2-line card-icon"></i>
+                  <span class="card-title">육신의 원리</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Sin_And_Yuk.asp"
+                  class="card-link"
+                >
+                  <i class="ri-sparkling-line card-icon"></i>
+                  <span class="card-title">육신의 왕쇠</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Yuk_Sang.asp"
+                  class="card-link"
+                >
+                  <i class="ri-loop-left-line card-icon"></i>
+                  <span class="card-title">육신의 상생상극</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Yuksin_Compare.asp"
+                  class="card-link"
+                >
+                  <i class="ri-exchange-line card-icon"></i>
+                  <span class="card-title">육신 대비</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Ilgan_Yuksin.asp"
+                  class="card-link"
+                >
+                  <i class="ri-user-heart-line card-icon"></i>
+                  <span class="card-title">일간과 육신</span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+
+        <!-- 🌿 오행의 활용 Section -->
+        <section id="ohaeng" class="section">
+          <h2 class="section-title">🌿 오행의 활용</h2>
+          <div class="swiper ohaengSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Ohaeng_Use.asp"
+                  class="card-link"
+                >
+                  <i class="ri-seedling-line card-icon"></i>
+                  <span class="card-title">오행의 활용</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Season_Ohaeng.asp"
+                  class="card-link"
+                >
+                  <i class="ri-sun-foggy-line card-icon"></i>
+                  <span class="card-title">계절별 오행의 생극</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_ilgan_Life.asp"
+                  class="card-link"
+                >
+                  <i class="ri-drop-fill card-icon"></i>
+                  <span class="card-title">오행의 역할</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_ilgan_Life.asp"
+                  class="card-link"
+                >
+                  <i class="ri-planet-line card-icon"></i>
+                  <span class="card-title">일간이 살아가는 법</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_ilju.asp"
+                  class="card-link"
+                >
+                  <i class="ri-calendar-check-line card-icon"></i>
+                  <span class="card-title">일주론</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Ganji_Johu.asp"
+                  class="card-link"
+                >
+                  <i class="ri-water-flash-line card-icon"></i>
+                  <span class="card-title">간지별 한난조습</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Johu.asp"
+                  class="card-link"
+                >
+                  <i class="ri-bluesky-fill card-icon"></i>
+                  <span class="card-title">월지별 한난조습</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_ByoungYak.asp"
+                  class="card-link"
+                >
+                  <i class="ri-emotion-happy-line card-icon"></i>
+                  <span class="card-title">병약론</span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+
+        <!-- 🏛️ 격국의 활용 Section -->
+        <section id="gyeokguk" class="section">
+          <h2 class="section-title">🏛️ 격국의 활용</h2>
+          <div class="swiper gyeokgukSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Form.asp"
+                  class="card-link"
+                >
+                  <i class="ri-government-line card-icon"></i>
+                  <span class="card-title">격의 개념</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Form_3.asp"
+                  class="card-link"
+                >
+                  <i class="ri-ancient-gate-line card-icon"></i>
+                  <span class="card-title">격국론</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_GungTong.asp"
+                  class="card-link"
+                >
+                  <i class="ri-poker-clubs-line card-icon"></i>
+                  <span class="card-title">궁퉁의 개념</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_GungTong_New.asp"
+                  class="card-link"
+                >
+                  <i class="ri-compass-3-line card-icon"></i>
+                  <span class="card-title">궁퉁총론</span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+
+        <!-- 📚 명리기초 Section -->
+        <section id="basic" class="section">
+          <h2 class="section-title">📚 명리기초</h2>
+          <div class="swiper basicSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Chobo.asp"
+                  class="card-link"
+                >
+                  <i class="ri-book-open-line card-icon"></i>
+                  <span class="card-title">명리기초</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_Saju_Exp.asp"
+                  class="card-link"
+                >
+                  <i class="ri-magic-line card-icon"></i>
+                  <span class="card-title">사주풀이</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a
+                  href="http://www.easysaju.com/Sub/Lec_RealTime.asp"
+                  class="card-link"
+                >
+                  <i class="ri-presentation-fill card-icon"></i>
+                  <span class="card-title">현장강의</span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+
+        <!-- 🌀 명리잡변 Section -->
+        <section id="jabbyun" class="section">
+          <h2 class="section-title">🌀 명리잡변</h2>
+          <div class="swiper jabbyunSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide sd">
+                <a href="/lecture/명리잡변 시즌1" class="card-link">
+                  <i class="ri-speak-line card-icon"></i>
+                  <span class="card-title">명리잡변 시즌1</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a href="/lecture/명리잡변 시즌2" class="card-link">
+                  <i class="ri-discuss-line card-icon"></i>
+                  <span class="card-title">명리잡변 시즌2</span>
+                </a>
+              </div>
+              <div class="swiper-slide sd">
+                <a href="/lecture/명리잡변 시즌3" class="card-link">
+                  <i class="ri-mic-ai-line card-icon"></i>
+                  <span class="card-title">명리잡변 시즌3</span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+
+        <!-- 추가: 필요 시 배너형 슬라이드 추가 가능 영역 -->
+        <section class="px-4 py-12">
+          <div class="bg-gray-900 text-white p-8 rounded-lg text-center">
+            <h3 class="text-xl font-bold mb-2">공지 / 이벤트 / 안내 배너</h3>
+            <p class="text-gray-300">어쩌구저쩌구</p>
+          </div>
+        </section>
+      </div>
+
+      </div>
+    </main>
+    <div
+    class="bg-[#0d111c] text-white text-xs pt-12 pb-16 px-4 border-t border-white/10"
+  >
+    <div class="max-w-5xl mx-auto space-y-6">
+      <!-- 메뉴 링크 -->
+      <ul class="flex flex-wrap justify-center gap-6 text-sm font-semibold">
+        <li><a href="#" class="hover:underline">회사소개</a></li>
+        <li><a href="#" class="hover:underline">개인정보취급방침</a></li>
+        <li><a href="#" class="hover:underline">이용약관</a></li>
+      </ul>
+
+      <!-- 회사 정보 -->
+      <div class="text-center space-y-1 leading-relaxed text-gray-400">
+        <p>상호명: 선운닷컴 | 대표자: 황성수</p>
+        <p>서울시 관악구 봉천로 594 덕성빌딩 2층 선운의 명리터</p>
+        <p>
+          사업자번호: 617-03-50162 | Tel: 010-2813-9375 | Email:
+          easysaju@daum.net
+        </p>
+      </div>
+
+      <!-- 소셜 아이콘 -->
+      <div class="flex justify-center gap-6 mt-4">
+        <a
+          href="https://youtube.com/"
+          target="_blank"
+          class="text-2xl hover:opacity-80"
+        >
+          <i class="ri-youtube-fill text-red-500"></i>
+          <span class="text-sm">유튜브</span>
+        </a>
+        <a
+          href="https://cafe.daum.net/"
+          target="_blank"
+          class="text-2xl hover:opacity-80"
+        >
+          <i class="ri-star-smile-line text-yellow-300"></i>
+          <span class="text-sm">선운의 명리터</span>
+        </a>
+      </div>
+
+      <!-- 카피라이트 -->
+      <p class="text-center text-gray-500 text-xs mt-6">
+        © 2025 선운닷컴. All rights reserved.
+      </p>
+    </div>
+    <footer class="fixed bottom-0 left-0 w-full bg-gray-600 text-white z-40">
+      <div class="flex justify-around items-center py-2 text-xs font-medium">
+        <a
+          href="http://www.easysaju.com/Main/View_MyList.asp"
+          class="flex flex-col items-center hover:text-yellow-300"
+        >
+          <i class="ri-user-line text-lg"></i>
+          <span>마이페이지</span>
+        </a>
+        <a
+          href="http://www.easysaju.com/Main/View_Cart.asp"
+          class="flex flex-col items-center hover:text-yellow-300"
+        >
+          <i class="ri-shopping-cart-line text-lg"></i>
+          <span>장바구니</span>
+        </a>
+        <a
+          href="http://www.easysaju.com/Main/Pay_Charge.asp"
+          class="flex flex-col items-center hover:text-yellow-300"
+        >
+          <i class="ri-coins-line text-lg"></i>
+          <span>적립하기</span>
+        </a>
+        <a
+          href="https://cafe.daum.net/easysaju"
+          class="flex flex-col items-center hover:text-yellow-300"
+        >
+          <i class="ri-question-line text-lg"></i>
+          <span>질문</span>
+        </a>
+        <a
+          href="https://www.youtube.com/@%EC%84%A0%EC%9A%B4%EC%9D%98%EB%AA%85%EB%A6%AC%ED%84%B0"
+          target="_blank"
+          class="flex flex-col items-center hover:text-red-400"
+        >
+          <i class="ri-youtube-line text-lg"></i>
+          <span>유튜브</span>
+        </a>
+        <a
+          href="https://cafe.daum.net/easysaju"
+          target="_blank"
+          class="flex flex-col items-center hover:text-green-300"
+        >
+          <i class="ri-star-smile-line text-lg"></i>
+          <span>카페</span>
+        </a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/slide.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- <script src="./js/star.js"></script> -->
+  </body>
+</html>
