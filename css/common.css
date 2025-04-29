@@ -100,6 +100,7 @@ html {
   transition: color 0.3s;
 }
 main {
+  background-color: #000000;
   padding-top: 8%;
   position: relative;
 }
@@ -477,7 +478,16 @@ main {
   .logo {
     font-size: 1.25rem;
   }
-
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(13, 17, 28, 0.95);
+    padding: 1rem;
+    animation: fadeDown 0.3s ease-out forwards;
+  }
+  .nav.open {
+    display: flex !important;
+  }
   .flex.items-center.gap-4.text-sm {
     flex-direction: column;
     gap: 0.5rem;

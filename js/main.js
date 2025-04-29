@@ -4,28 +4,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const category = document.getElementById("category");
   const hamburger = document.getElementById("hamburger");
 
+  function isMobile() {
+    return window.innerWidth <= 768; // 모바일 기준
+  }
+
   window.addEventListener("scroll", () => {
     const currentScroll =
       window.pageYOffset || document.documentElement.scrollTop;
     const categoryTop = category.offsetTop;
 
-    // header shrink (줄어들게 하는 거)
+    // header shrink
     if (currentScroll > 50) {
       header.classList.add("shrink");
     } else {
       header.classList.remove("shrink");
     }
 
-    // ✅ category 영역 지나면 nav 숨기기
-    if (currentScroll > categoryTop - 80) {
-      nav.style.display = "none";
-    } else {
-      nav.style.display = "flex"; // 다시 flex로 복구
+    // ✅ category 영역 지나면 nav 숨기기 (데스크탑만)
+    if (!isMobile()) {
+      if (currentScroll > categoryTop - 80) {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "flex"; // 데스크탑 복구
+      }
     }
   });
 
-  // 햄버거 메뉴 클릭 시 nav 열기 (모바일용)
+  // ✅ 햄버거 클릭 시 nav 토글 (모바일만)
   hamburger.addEventListener("click", () => {
-    nav.classList.toggle("open");
+    if (isMobile()) {
+      nav.classList.toggle("open");
+    }
   });
+
+  // ✅ 화면 크기 바뀔 때 nav 초기화
+  window.addEventListener("resize", () => {
+    if (!isMobile()) {
+      nav.style.display = "flex";
+      nav.classList.remove("open");
+    } else {
+      nav.style.display = "none";
+    }
+  });
+
+  // ✅ 처음 로드될 때 모바일이면 nav 숨기기
+  if (isMobile()) {
+    nav.style.display = "none";
+  }
 });
