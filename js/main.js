@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
 
   function isMobile() {
-    return window.innerWidth <= 768; // 모바일 기준
+    return window.innerWidth <= 1235; // 모바일~1235px
   }
 
   window.addEventListener("scroll", () => {

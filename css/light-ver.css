@@ -1,0 +1,17 @@
+/* ✅ 라이트모드 */
+.light-ver {
+  background-color: #ecf2f6;
+  color: #111827;
+  word-spacing: -1px;
+}
+.light-ver {
+  background-color: #ffffff;
+}
+
+.light-ver .nav a {
+  color: #333333;
+}
+
+.light-ver .nav a:hover {
+  color: #000000;
+}

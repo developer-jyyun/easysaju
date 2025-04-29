@@ -320,6 +320,20 @@ main {
   color: #272c4d;
 }
 
+/* 슬라이드 공통 카드 */
+.sd {
+  border-radius: 1rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  position: relative;
+}
 .card-link {
   display: flex;
   flex-direction: column;
@@ -343,22 +357,11 @@ main {
   letter-spacing: 0.02em;
   width: 80%;
 }
-/* 슬라이드 공통 카드 */
-.sd {
-  border-radius: 1rem;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  padding: 1rem;
-  position: relative;
-}
-
 /* Swiper 버튼 */
+.swiper {
+  position: relative;
+  z-index: 1;
+}
 .custom-prev {
   left: 0 !important;
   z-index: 50;
@@ -382,12 +385,6 @@ main {
   z-index: 10;
   pointer-events: auto;
 }
-/* ✅ Swiper 버튼 스타일 */
-.swiper {
-  position: relative;
-  z-index: 1;
-}
-
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
@@ -430,23 +427,6 @@ main {
   backdrop-filter: blur(6px);
   opacity: 0.8;
 }
-/* ✅ 라이트모드 */
-.light-ver {
-  background-color: #ecf2f6;
-  color: #111827;
-  word-spacing: -1px;
-}
-.light-ver {
-  background-color: #ffffff;
-}
-
-.light-ver .nav a {
-  color: #333333;
-}
-
-.light-ver .nav a:hover {
-  color: #000000;
-}
 
 /* 반응형 */
 .header.shrink {
@@ -467,7 +447,25 @@ main {
 .mobile-header input {
   width: 100%;
 }
-@media (max-width: 768px) {
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1235px) {
+  .mobile-header {
+    display: flex;
+  }
+  .desktop-header {
+    display: none;
+  }
   .header-inner {
     flex-direction: column;
     gap: 0.5rem;
@@ -514,14 +512,12 @@ main {
   }
 }
 
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+@media (min-width: 1236px) {
+  .mobile-header {
+    display: none;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .desktop-header {
+    display: flex;
   }
 }
 @media (max-width: 768px) {
@@ -538,7 +534,7 @@ main {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.3rem;
     text-align: center;
   }
 
@@ -547,7 +543,9 @@ main {
     text-align: center;
     position: relative;
     left: 50%;
-    transform: translateX(-25%);
+    transform: translateX(-50%);
+    width: 206px;
+    margin-bottom: 1.5rem;
   }
 
   .sparkle {
