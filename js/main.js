@@ -52,3 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.style.display = "none";
   }
 });
+
+// ✅ target=_blank 추가
+document.querySelectorAll('a[href^="http"]').forEach((link) => {
+  if (!link.hasAttribute("target")) {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer"); // 보안상 권장
+  }
+});

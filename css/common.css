@@ -339,7 +339,7 @@ main {
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   width: 80%;
 }
@@ -355,20 +355,39 @@ main {
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 1rem;
+  position: relative;
 }
 
 /* Swiper 버튼 */
-.swiper-button-prev,
-.swiper-button-next {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
+.custom-prev {
+  left: 0 !important;
+  z-index: 50;
+  /* border-radius: 25px 0 0 25px; */
+}
+.custom-next {
+  right: 0 !important;
+  z-index: 50;
+  /* border-radius: 0 25px 25px 0; */
+}
+.custom-prev,
+.custom-next {
+  top: 19% !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 50px !important;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  pointer-events: auto;
 }
 /* ✅ Swiper 버튼 스타일 */
+.swiper {
+  position: relative;
+  z-index: 1;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
@@ -378,7 +397,13 @@ main {
   font-size: 18px !important;
   color: white;
 }
+.swiper-slide a {
+  pointer-events: auto;
+}
 
+.swiper-button-hidden {
+  display: none !important;
+}
 /* 추천강의 */
 .gradient-border {
   background: #fff;
@@ -566,11 +591,6 @@ main {
     height: auto;
     padding: 1rem 0.5rem;
     font-size: 0.85rem;
-  }
-
-  .card-title {
-    font-size: 1rem;
-    text-align: center;
   }
 
   .card-icon {

@@ -2,9 +2,11 @@
 const yuksinSwiper = new Swiper(".yuksinSwiper", {
   slidesPerView: 4,
   spaceBetween: 16,
+  watchOverflow: true,
   navigation: {
-    nextEl: ".yuksinSwiper .swiper-button-next",
-    prevEl: ".yuksinSwiper .swiper-button-prev",
+    nextEl: ".yuksinSwiper .custom-next",
+    prevEl: ".yuksinSwiper .custom-prev",
+    disabledClass: "swiper-button-hidden",
   },
   breakpoints: {
     0: { slidesPerView: 1.2 },
@@ -17,9 +19,11 @@ const yuksinSwiper = new Swiper(".yuksinSwiper", {
 const ohaengSwiper = new Swiper(".ohaengSwiper", {
   slidesPerView: 4,
   spaceBetween: 16,
+  watchOverflow: true,
   navigation: {
-    nextEl: ".ohaengSwiper .swiper-button-next",
-    prevEl: ".ohaengSwiper .swiper-button-prev",
+    nextEl: ".ohaengSwiper .custom-next",
+    prevEl: ".ohaengSwiper .custom-prev",
+    disabledClass: "swiper-button-hidden",
   },
   breakpoints: {
     0: { slidesPerView: 1.2 },
@@ -32,9 +36,11 @@ const ohaengSwiper = new Swiper(".ohaengSwiper", {
 const gyeokgukSwiper = new Swiper(".gyeokgukSwiper", {
   slidesPerView: 4,
   spaceBetween: 16,
+  watchOverflow: true,
   navigation: {
-    nextEl: ".gyeokgukSwiper .swiper-button-next",
-    prevEl: ".gyeokgukSwiper .swiper-button-prev",
+    nextEl: ".gyeokgukSwiper .custom-next",
+    prevEl: ".gyeokgukSwiper .custom-prev",
+    disabledClass: "swiper-button-hidden",
   },
   breakpoints: {
     0: { slidesPerView: 1.2 },
@@ -42,21 +48,27 @@ const gyeokgukSwiper = new Swiper(".gyeokgukSwiper", {
     1024: { slidesPerView: 4 },
   },
 });
+
 // 명리기초 Swiper
 const basicSwiper = new Swiper(".basicSwiper", {
   slidesPerView: 3,
   spaceBetween: 16,
+  watchOverflow: true,
   navigation: {
-    nextEl: ".basicSwiper .swiper-button-next",
-    prevEl: ".basicSwiper .swiper-button-prev",
+    nextEl: ".basicSwiper .custom-next",
+    prevEl: ".basicSwiper .custom-prev",
+    disabledClass: "swiper-button-hidden",
   },
 });
+
 // 명리잡변 Swiper
 const jabbyunSwiper = new Swiper(".jabbyunSwiper", {
   slidesPerView: 3,
   spaceBetween: 16,
+  watchOverflow: true,
   navigation: {
-    nextEl: ".jabbyunSwiper .swiper-button-next",
-    prevEl: ".jabbyunSwiper .swiper-button-prev",
+    nextEl: ".jabbyunSwiper .custom-next",
+    prevEl: ".jabbyunSwiper .custom-prev",
+    disabledClass: "swiper-button-hidden",
   },
 });
