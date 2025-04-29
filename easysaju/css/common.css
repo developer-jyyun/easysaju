@@ -1,0 +1,597 @@
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* ✅ 폰트 불러오기 */
+
+@font-face {
+  font-family: "TTTtangsbudaejjigaeB";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTWanjudaedunsancheB";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+}
+
+/* ✅ 폰트 클래스 */
+
+.font-wanju {
+  font-family: "TTWanjudaedunsancheB", "맑은고딕";
+}
+.font-ttt {
+  font-family: "TTTtangsbudaejjigaeB", "Black Han Sans", "맑은고딕";
+}
+.font-title {
+  font-family: "Black Han Sans", "Ownglyph_ryurue-Rg", "맑은고딕";
+}
+.font-sangsang {
+  font-family: "SangSangAnt", "맑은고딕";
+}
+.font-score {
+  font-family: "S-CoreDream-3Light", "맑은고딕", sans-serif;
+}
+
+/* ✅ 작은 텍스트 */
+.text-xxs {
+  font-size: 10px;
+}
+
+/* ✅ 스크롤바 제거 */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(13, 17, 28, 0.9); /* 배경색 명시 */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner {
+  padding: 0.5rem 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+main {
+  padding-top: 8%;
+  position: relative;
+}
+/* .main {
+  margin-top: 8%;
+} */
+.inner-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+/* 전체 Section 스타일 */
+.section {
+  padding: 2rem 1rem;
+}
+
+/* Section 제목 */
+.section-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-section {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+.light-ver .hero-section {
+  background: url("/assets/imgs/hero-blue.jpg") no-repeat center center / cover;
+}
+
+.hero-section .inner {
+  max-width: 571px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@keyframes brushGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.brush-bg {
+  position: absolute;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 105, 135, 0.5) 0%,
+    rgba(255, 150, 100, 0.25) 60%,
+    rgba(255, 200, 150, 0.1) 90%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(20px);
+  animation: brushGlow 2.5s ease-in-out forwards;
+}
+
+.hero-section .inner-top {
+  width: 100%;
+  background-color: #ff9800;
+  color: #590e34;
+  padding: 4px;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  top: 5rem;
+  z-index: 2;
+}
+
+.inner-con {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.hero-section .tv {
+  width: 240px;
+  margin-bottom: 24px;
+  z-index: 1;
+}
+@keyframes heroTextAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 깜빡이는 효과 */
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 반짝이 등장 애니메이션 */
+@keyframes sparkleAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sparkleTwinkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+.hero-title-wrap {
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.3rem);
+  line-height: 1;
+  font-weight: 900;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation-delay: 0.2s;
+}
+
+.hero-title.stroke {
+  color: white;
+  -webkit-text-stroke: 10px white;
+  text-shadow: 12px 10px 2px rgb(0 0 0 / 30%);
+  animation: heroTextAppear 1s ease-out forwards, flicker 1.5s forwards 1.2s;
+  z-index: 1;
+}
+
+.hero-title.fill {
+  color: #590e34;
+  z-index: 2;
+  animation: heroTextAppear 1s ease-out forwards, flicker 1.5s forwards 1.2s;
+}
+
+/* ✨ 반짝이 이미지 추가 */
+.sparkle {
+  position: absolute;
+  top: -28px;
+  right: 4px;
+  width: 72px;
+  z-index: 3;
+  opacity: 0;
+  animation: sparkleAppear 1s ease-out forwards, flicker 1.5s forwards 1.2s,
+    sparkleTwinkle 1.2s ease-in-out 1.2s infinite;
+}
+
+.hero-section .btn {
+  background-color: #590e34;
+  padding: 0.5rem 4rem;
+  border: 2px solid #fff;
+  width: 100%;
+  margin: 2rem 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+  box-shadow: 8px 8px 2px rgb(0 0 0 / 30%);
+  z-index: 5;
+}
+
+.hero-section .btn:hover {
+  background-color: #7b184b;
+}
+
+#theme h3 {
+  color: #0c0e1a;
+}
+#theme p {
+  color: #272c4d;
+}
+
+.card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  font-weight: 600;
+  gap: 0.3rem;
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  font-weight: 100;
+  width: 40%;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  width: 80%;
+}
+/* 슬라이드 공통 카드 */
+.sd {
+  border-radius: 1rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 1rem;
+}
+
+/* 내부 링크 텍스트 */
+.bg-img .card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  overflow: hidden;
+}
+
+#yuksin .bg-img {
+}
+#yuksin .bg-img .card-link {
+}
+#yuksin .bg-img .card-link i {
+  background-color: #ff9999;
+}
+
+/* Swiper 버튼 */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ✅ Swiper 버튼 스타일 */
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  color: white;
+}
+
+/* 추천강의 */
+.gradient-border {
+  background: #fff;
+  padding: 2px;
+  border-radius: 12px;
+  transition: background 0.5s;
+  overflow: hidden;
+}
+
+.gradient-border > div {
+  background-color: #070a16;
+  border-radius: 10px;
+  transition: background-color 0.5s, backdrop-filter 0.5s, opacity 0.5s;
+  backdrop-filter: none;
+  opacity: 1;
+}
+
+/* 호버 시 */
+.gradient-border:hover {
+  background: linear-gradient(90deg, #bef9ff, #fff, #c3c7ff);
+}
+
+.gradient-border:hover > div {
+  backdrop-filter: blur(6px);
+  opacity: 0.8;
+}
+/* ✅ 라이트모드 */
+.light-ver {
+  background-color: #ecf2f6;
+  color: #111827;
+  word-spacing: -1px;
+}
+.light-ver {
+  background-color: #ffffff;
+}
+
+.light-ver .nav a {
+  color: #333333;
+}
+
+.light-ver .nav a:hover {
+  color: #000000;
+}
+
+/* 반응형 */
+.header.shrink {
+  padding: 0.3rem 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(13, 17, 28, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.nav.open {
+  display: block;
+}
+#hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mobile-header input {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .flex.items-center.gap-4.text-sm {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .header input[type="text"] {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(13, 17, 28, 0.95);
+    padding: 1rem;
+    animation: fadeDown 0.3s ease-out forwards;
+  }
+  .nav > div {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .nav a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .inner-con {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .hero-section .tv {
+    width: 180px;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-title-wrap {
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-25%);
+  }
+
+  .sparkle {
+    display: none;
+  }
+
+  .hero-section .btn {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+  }
+
+  .hero-section .inner-top {
+    font-size: 1rem;
+    top: 2rem;
+  }
+
+  .hero-section {
+    height: auto;
+  }
+}
+
+/* 작은 화면 카드 높이 자동 */
+@media (max-width: 640px) {
+  #theme .grid > a > div,
+  #featured .grid > a > div {
+    height: auto;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .card-link {
+    font-size: 0.8rem;
+  }
+}
+
+/* 모바일 swiper 카드 간격 */
+@media (max-width: 640px) {
+  .sd {
+    height: auto;
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    width: auto;
+  }
+}
