@@ -113,36 +113,31 @@
 }
 
 .dark-ver .sd {
-  background: linear-gradient(to bottom right, #22232f, #0f1a1a);
-}
-.dark-ver .sd:hover {
-  filter: brightness(1.6);
-  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+  background: radial-gradient(
+    circle at top left,
+    rgba(150, 168, 177, 0.2),
+    rgba(40, 61, 53, 0.4),
+    rgba(150, 168, 177, 0.2)
+  );
+  box-shadow: 4px 8px 12px rgba(104, 97, 125, 0.5);
+
+  color: #d0d1d5;
+  border: 2px solid #d0d1d5;
+  letter-spacing: 1;
 }
 
-.dark-ver #yuksin .sd {
-  border: 2px solid #fbe5e5;
-  color: #f7eeee;
-}
-.dark-ver #ohaeng .sd {
-  border: 2px solid #eaffea;
-  color: #f4fdf4;
-}
-.dark-ver #gyeokguk .sd {
-  border: 2px solid#fff;
-  color: #fff;
-}
-.dark-ver #gyeokguk .sd {
-  border: 2px solid #f8f1ff;
-  color: #fffcfe;
-}
-.dark-ver #basic .sd {
-  border: 2px solid #feffe3;
-  color: #feffed;
-}
-.dark-ver #jabbyun .sd {
-  border: 2px solid #d7ecff;
-  color: #eff1ff;
+.dark-ver .sd:hover {
+  background: radial-gradient(
+    circle at top left,
+    rgba(112, 150, 100, 0.3),
+    rgba(125, 124, 189, 0.3),
+    rgba(131, 173, 118, 0.2)
+  );
+  border: 2px solid #d1ecf5;
+  color: #d1ecf5;
+  transition: all 0.2s ease;
+  box-shadow: 4px 8px 10px rgba(104, 97, 125, 0.8);
+  font-weight: bold;
 }
 
 /* ✅ 깜빡임 애니메이션 */
