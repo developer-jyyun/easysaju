@@ -610,4 +610,8 @@ main {
     font-size: 1.5rem;
     width: auto;
   }
+  .swiper-button-next.custom-next,
+  .swiper-button-prev.custom-prev {
+    display: none !important;
+  }
 }
