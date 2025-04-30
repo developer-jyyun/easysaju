@@ -135,59 +135,70 @@
         <!-- 명리테마 -->
         <section id="theme" class="px-4 py-12">
           <h2 class="text-xl font-bold mb-8 flex items-center gap-2">
-            💡 사주를 더 쉽고 재미있게!
+            🧐 사주를 더 쉽고 재미있게!
           </h2>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- 테마 카드 -->
+          <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 💵 돈에 대하여 -->
             <a href="http://www.easysaju.com/Sub/Lec_Money.asp" class="block">
-              <div
-                class="bg-[#cdf1d8] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition"
-              >
+              <div class="bg-[#cdf1d8] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition">
                 <div class="p-4 bg-white rounded-full text-2xl mb-3">💵</div>
                 <h3 class="text-lg font-semibold mb-1">돈에 대하여</h3>
-                <p class="text-xs text-gray-700">
-                  돈은 어떻게 벌어야 할까?<br />사주로 찾는 당신만의 방식
+                <p class="text-xs text-gray-700 block sm:hidden leading-tight">
+                 사주로 찾는<br />돈을 버는 방식
+                </p>
+                <p class="text-xs text-gray-700 hidden sm:block leading-tight">
+                  돈은 어떻게 버는가?<br />
+                  사주로 찾는 당신만의 방식
                 </p>
               </div>
             </a>
+          
+            <!-- 👀 사주와 심리 -->
             <a href="http://easysaju.com/Sub/Lec_Psychology.asp" class="block">
-              <div
-                class="bg-[#aed2ee] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition"
-              >
+              <div class="bg-[#aed2ee] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition">
                 <div class="p-4 bg-white rounded-full text-2xl mb-3">👀</div>
                 <h3 class="text-lg font-semibold mb-1">사주와 심리</h3>
-                <p class="text-xs text-gray-700">
+                <p class="text-xs text-gray-700 block sm:hidden leading-tight">
+                  마음은 왜<br />그렇게 작용할까?
+                </p>
+                <p class="text-xs text-gray-700 hidden sm:block leading-tight">
                   마음은 왜 그렇게 작용할까?<br />
                   사주의 흐름 속에서 마음을 읽는 법
                 </p>
               </div>
             </a>
+          
+            <!-- 🍀 좋은 운이란 무엇인가 -->
             <a href="http://easysaju.com/Sub/Lec_Time_2.asp" class="block">
-              <div
-                class="bg-[#f2e3b6] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition"
-              >
+              <div class="bg-[#f2e3b6] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition">
                 <div class="p-4 bg-white rounded-full text-2xl mb-3">🍀</div>
-                <h3 class="text-lg font-semibold mb-1">좋은 운이란 무엇인가</h3>
-                <p class="text-xs text-gray-700">
+                <h3 class="text-lg font-semibold mb-1 sm:hidden">좋은운이란?</h3>
+                <h3 class="text-lg font-semibold mb-1 hidden sm:block">좋은 운이란 무엇인가</h3>
+                <p class="text-xs text-gray-700 block sm:hidden leading-tight">
+                  노력하면<br />좋은 운이 오는가?
+                </p>
+                <p class="text-xs text-gray-700 hidden sm:block leading-tight">
                   노력하면 좋은 운이 오는가?<br />
                   행운은 사주의 균형이 만들어낸 타이밍
                 </p>
               </div>
             </a>
+          
+            <!-- 💘 궁합 -->
             <a href="http://easysaju.com/Sub/Lec_Love.asp" class="block">
-              <div
-                class="bg-[#fcc] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition"
-              >
+              <div class="bg-[#fcc] rounded-lg p-6 flex flex-col items-center justify-center text-center h-[220px] hover:opacity-90 transition">
                 <div class="p-4 bg-white rounded-full text-2xl mb-3">💘</div>
                 <h3 class="text-lg font-semibold mb-1">궁합</h3>
-                <p class="text-xs text-gray-700">
+                <p class="text-xs text-gray-700 block sm:hidden leading-tight">
+                  우리는 왜 끌리고<br />왜 멀어질까?
+                </p>
+                <p class="text-xs text-gray-700 hidden sm:block leading-tight">
                   우리는 왜 끌리고 왜 멀어질까?<br />
                   육신, 일간, 계절별 관점에서 보는 궁합
                 </p>
               </div>
             </a>
-          </div>
+          </div>      
         </section>
         <!-- 추천강의 -->
         <section id="featured" class="px-4 py-12">
@@ -369,11 +380,11 @@
           <div
             class="md:hidden grid grid-cols-5 gap-2 text-xs text-white font-bold text-center"
           >
-            <a href="#yuksin" class="block">육신</a>
-            <a href="#ohaeng" class="block">오행</a>
-            <a href="#gyeokguk" class="block">격국</a>
-            <a href="#basic" class="block">명리기초</a>
-            <a href="#jabbyun" class="block">명리잡변</a>
+            <a href="#yuksin" class="block bg-sky-900 py-1 rounded-xl hover:bg-sky-700">육신</a>
+            <a href="#ohaeng" class="block bg-sky-900 py-1 rounded-xl hover:bg-sky-700">오행</a>
+            <a href="#gyeokguk" class="block bg-sky-900 py-1 rounded-xl hover:bg-sky-700">격국</a>
+            <a href="#basic" class="block bg-sky-900 py-1 rounded-xl hover:bg-sky-700">명리기초</a>
+            <a href="#jabbyun" class="block bg-sky-900 py-1 rounded-xl hover:bg-sky-700">명리잡변</a>
           </div>
         </section>
         <!-- 🎯 육신의 활용 Section -->

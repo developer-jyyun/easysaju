@@ -15,3 +15,15 @@
 .light-ver .nav a:hover {
   color: #000000;
 }
+.light-ver .card-icon {
+  font-size: 1.8rem;
+  font-weight: 100;
+  width: 40%;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.light-ver .card-title {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  width: 80%;
+}

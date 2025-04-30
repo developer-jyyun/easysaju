@@ -581,7 +581,7 @@ main {
 
 /* 작은 화면 카드 높이 자동 */
 @media (max-width: 640px) {
-  #theme .grid > a > div,
+  /* #theme .grid > a > div, */
   #featured .grid > a > div {
     height: auto;
   }
@@ -592,6 +592,9 @@ main {
 
   .card-link {
     font-size: 0.8rem;
+  }
+  .card-title {
+    font-size: 1.2rem;
   }
 }
 
