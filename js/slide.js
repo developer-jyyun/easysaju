@@ -59,6 +59,11 @@ const basicSwiper = new Swiper(".basicSwiper", {
     prevEl: ".basicSwiper .custom-prev",
     disabledClass: "swiper-button-hidden",
   },
+ breakpoints: {
+    0: { slidesPerView: 1.2 },
+    640: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
 });
 
 // 명리잡변 Swiper
@@ -70,5 +75,10 @@ const jabbyunSwiper = new Swiper(".jabbyunSwiper", {
     nextEl: ".jabbyunSwiper .custom-next",
     prevEl: ".jabbyunSwiper .custom-prev",
     disabledClass: "swiper-button-hidden",
+  },
+ breakpoints: {
+    0: { slidesPerView: 1.2 },
+    640: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
   },
 });
