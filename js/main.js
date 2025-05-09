@@ -58,6 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const headerEl = document.querySelector(".header");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > 10) {
+      headerEl.classList.add("scrolled");
+    } else {
+      headerEl.classList.remove("scrolled");
+    }
+  });
+
   // ✅ 외부 링크는 새 창으로 열기
   document.querySelectorAll('a[href^="http"]').forEach((link) => {
     if (!link.hasAttribute("target")) {
