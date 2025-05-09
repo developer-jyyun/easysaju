@@ -18,51 +18,55 @@
     />
   </head>
 
-  <body class="dark-ver font-score">
-    <!-- ✅ 헤더 -->
-    <header class="header">
-      <div class="header-inner">
-        <a href="/" class="logo">선운닷컴 2.0</a>
-        <!-- ✅ 모바일용 로그인/가입 + 햄버거/검색 묶음 -->
-        <div class="mobile-header md:hidden flex flex-col gap-2 w-full mt-2">
-          <div class="flex justify-between items-center w-full">
-            <div class="text-sm flex gap-2 text-white">
-              <a href="#">로그인</a>
-              <span class="text-gray-400">|</span>
-              <a href="#">회원가입</a>
-            </div>
+  <body class="font-score dark-ver">
+    <!-- ✅ 통합 헤더 -->
+    <header class="header bg-gray-900 text-white">
+      <div class="header-inner flex-col w-full">
 
-            <div class="flex gap-2 items-center">
-              <button id="hamburger" class="text-white text-2xl">☰</button>
+        <!-- ✅ 상단 로고 + 기능바 -->
+        <div class="top-menu w-full text-xs px-4 py-2 border-b border-gray-800">
+          <!-- 모바일용 (xs~lg): 로고 + 햄버거 / 로그인+검색 아래 줄 -->
+          <div class="flex flex-col gap-2 lg:hidden">
+            <div class="flex justify-between items-center">
+              <div class="logo font-bold text-lg">선운닷컴2.0</div>
+              <button id="hamburger" class="text-xl">
+                <i class="ri-menu-line"></i>
+              </button>
+            </div>
+            <div class="flex justify-between items-center gap-3">
+              <div class="flex gap-2 items-center whitespace-nowrap">
+                <a href="/login" class="hover:underline text-sm">로그인</a>
+                <span>|</span>
+                <a href="/signup" class="hover:underline text-sm">회원가입</a>
+              </div>
+              <input type="text" placeholder="🔍 검색" class="w-full px-3 py-1 bg-white/10 border border-gray-400 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300">
             </div>
           </div>
-          <div>
-            <input
-              type="text"
-              placeholder="🔍 검색"
-              class="w-full px-3 py-1 bg-white/10 border border-gray-400 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300"
-            />
+
+          <!-- 데스크탑용 상단 로고 + 기능바 (lg 이상) -->
+          <div class="hidden lg:flex justify-between items-center w-full">
+            <div class="logo font-bold text-lg md:text-xl">선운닷컴2.0</div>
+            <div class="flex items-center gap-3">
+              <a href="https://cafe.daum.net/easysaju" target="_blank">
+                <img src="./assets/icon/daumcafe.svg" alt="다음카페" class="w-6 h-6" />
+              </a>
+              <a href="https://www.youtube.com/@%EC%84%A0%EC%9A%B4%EC%9D%98%EB%AA%85%EB%A6%AC%ED%84%B0" target="_blank">
+                <img src="./assets/icon/youtube.svg" alt="유튜브" class="w-6 h-6" />
+              </a>
+              <div class="search-container">
+                <input type="text" placeholder="🔍 검색" class="w-full px-3 py-1 bg-white/10 border border-gray-400 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300">
+              </div>
+              <button id="mode-toggle" class="px-2 py-1 rounded-full bg-white text-black text-xl">
+                <i id="mode-icon" class="ri-sun-line"></i>
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- ✅ 데스크탑용 -->
-        <div class="desktop-header hidden md:flex items-center gap-4 text-sm">
-          <a href="#">로그인</a>
-          <span class="text-gray-400">|</span>
-          <a href="#">회원가입</a>
-          <input
-            type="text"
-            placeholder="🔍 검색"
-            class="ml-4 px-3 py-1 bg-white/10 border border-gray/40 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300"
-          />
-        </div>
-        <!-- ✅ GNB 메뉴 -->
-      </div>
-      <nav class="nav">
-        <div
-          class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0 text-sm"
-        >
-          <div class="flex flex-wrap gap-4 font-semibold">
+        <!-- ✅ PC 전용 강의 메뉴 -->
+        <div class="pc-main-menu hidden lg:flex flex-row justify-between items-center gap-y-3 gap-x-6 w-full px-4 py-4 border-t border-gray-700 text-sm">
+          <!-- 강의 메뉴 -->
+          <div class="flex flex-wrap justify-center lg:justify-end gap-4 font-semibold">
             <a href="#">육신의 활용</a>
             <a href="#">오행의 활용</a>
             <a href="#">격국의 활용</a>
@@ -70,37 +74,64 @@
             <a href="#">명리잡변</a>
             <a href="#">현장강의</a>
           </div>
-          <div class="flex flex-wrap gap-4 text-xs text-white">
-            <a href="#">적립하기</a>
-            <a href="#">질문게시판</a>
-            <a href="#">공지사항</a>
-            <a href="#">선운닷컴 1.0</a>
-            <a href="#">고객센터</a>
+
+          <!-- 유틸리티 메뉴 -->
+          <div class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 items-center">
+            <a href="/login" class="hover:underline">로그인</a>
+            <a href="/signup" class="hover:underline">회원가입</a>
+            <a href="/notice" class="hover:underline">공지사항</a>
+            <a href="#" class="hover:underline px-1 font-semibold animate-color-text">전 강좌 구매하기</a>
+            <a href="/legacy" class="px-1 font-semibold animate-bg-text">선운닷컴1.0(20% DC)</a>
           </div>
         </div>
-      </nav>
+    
     </header>
+                  
+    <!-- ✅ 모바일 전용 메뉴 (토글 시 열림) -->
+    <div id="mobile-main-menu" class="lg:hidden hidden overflow-hidden transition-all duration-300 ease-in-out h-full z-10">
+      <div class="flex flex-col gap-3 p-5 text-sm border-t border-gray-600 text-white">
+        <!-- 로그인 / 회원가입 / 공지사항 -->     
+        <a href="/notice" class="hover:underline">공지사항</a>
+        <a href="/cart" class="hover:underline">장바구니</a>
+        <a href="http://www.easysaju.com/Main/Pay_Charge.asp" class="hover:underline">적립하기</a>
+        <a href="https://cafe.daum.net/easysaju" class="hover:underline">질문하기</a>
 
-    <div class="mobile-header md:hidden flex flex-col gap-2 w-full mt-2">
-      <div class="flex justify-between items-center w-full">
-        <div class="text-sm flex gap-2 text-white">
-          <a href="#">로그인</a>
-          <span class="text-gray-400">|</span>
-          <a href="#">회원가입</a>
-        </div>
+        <hr class="my-2 border-gray-700" />
 
-        <div class="flex gap-2 items-center">
-          <button id="hamburger" class="text-white text-2xl">☰</button>
+        <!-- 강의 메뉴 -->
+        <a href="#">육신의 활용</a>
+        <a href="#">오행의 활용</a>
+        <a href="#">격국의 활용</a>
+        <a href="#">명리기초</a>
+        <a href="#">명리잡변</a>
+        <a href="#">현장강의</a>
+
+        <hr class="my-2 border-gray-700" />
+
+        <!-- 전강좌 구매 / 할인 -->
+        <a href="#" class="hover:underline px-1 font-semibold">전 강좌 구매하기</a>
+        <a href="/legacy" class="px-1 font-semibold  inline-block">선운닷컴1.0 (20% DC)</a>
+
+        <hr class="my-2 border-gray-700" />
+
+        <!-- 소셜 & 다크모드 -->
+        <div class="flex items-center gap-3">
+          <a href="https://cafe.daum.net/easysaju" target="_blank">
+            <img src="./assets/icon/daumcafe.svg" alt="다음카페" class="w-5 h-5" />
+          </a>
+          <a href="https://www.youtube.com/@%EC%84%A0%EC%9A%B4%EC%9D%98%EB%AA%85%EB%A6%AC%ED%84%B0" target="_blank">
+            <img src="./assets/icon/youtube.svg" alt="유튜브" class="w-5 h-5" />
+          </a>
+          <a href="http://www.easysaju.com/Index.asp" target="_blank">
+            선운닷컴1.0
+          </a>
+          <button id="mobile-mode-toggle" class="ml-auto px-2 py-1 rounded-md bg-white text-black text-xs">
+            🌗 모드 전환
+          </button>
         </div>
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="🔍 검색"
-          class="w-full px-3 py-1 bg-white/10 border border-gray-400 rounded-md text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-gray-300"
-        />
       </div>
     </div>
+  
     <!-- ✅ 메인 -->
     <main>
       <div class="bg"></div>
@@ -651,9 +682,9 @@
 
         <!-- 추가: 필요 시 배너형 슬라이드 추가 가능 영역 -->
         <section class="px-4 py-12">
-          <div class="bg-gray-900 text-white p-8 rounded-lg text-center">
-            <h3 class="text-xl font-bold mb-2">공지 / 이벤트 / 안내 배너</h3>
-            <p class="text-gray-300">어쩌구저쩌구</p>
+          <div class="bg-gray-500  p-8 rounded-lg text-center text-gray-900 text-xl font-bold mb-2">
+            <h3>공지 / 이벤트 / 안내 배너</h3>
+            <p class="text-lg">sub..........</p>
           </div>
         </section>
       </div>
@@ -685,7 +716,7 @@
           <!-- 소셜 아이콘 -->
           <div class="flex justify-center gap-6 mt-4">
             <a
-              href="https://youtube.com/"
+              href="https://www.youtube.com/@%EC%84%A0%EC%9A%B4%EC%9D%98%EB%AA%85%EB%A6%AC%ED%84%B0"
               target="_blank"
               class="text-2xl hover:opacity-80"
             >
@@ -708,7 +739,7 @@
           </p>
         </div>
       </div>
-      <div class="fixed bottom-0 left-0 w-full bg-gray-600 text-white z-40">
+      <div class="fixed bottom-0 left-0 w-full bg-gray-600 text-white z-30">
         <div class="flex justify-around items-center py-2 text-xs font-medium">
           <a
             href="http://www.easysaju.com/Main/View_MyList.asp"
@@ -736,23 +767,15 @@
             class="flex flex-col items-center hover:text-blue-300"
           >
             <i class="ri-question-line text-lg "></i>
-            <span>질문</span>
+            <span>질문하기</span>
+          </a>  
+          <a href="https://www.youtube.com/@%EC%84%A0%EC%9A%B4%EC%9D%98%EB%AA%85%EB%A6%AC%ED%84%B0" target="_blank" class="hidden md:flex flex-col items-center">
+            <i class="ri-youtube-line text-xl"></i>
+            유튜브
           </a>
-          <a
-            href="https://www.youtube.com/@%EC%84%A0%EC%9A%B4%EC%9D%98%EB%AA%85%EB%A6%AC%ED%84%B0"
-            target="_blank"
-            class="flex flex-col items-center hover:text-red-400"
-          >
-            <i class="ri-youtube-line text-lg"></i>
-            <span>유튜브</span>
-          </a>
-          <a
-            href="https://cafe.daum.net/easysaju"
-            target="_blank"
-            class="flex flex-col items-center hover:text-purple-300"
-          >
-            <i class="ri-star-smile-line text-lg"></i>
-            <span>카페</span>
+          <a href="https://cafe.daum.net/easysaju" target="_blank" class="hidden md:flex flex-col items-center">
+            <i class="ri-group-line text-xl"></i>
+            다음카페
           </a>
         </div>
       </div>

@@ -1,20 +1,14 @@
 /* ✅ 라이트모드 */
 .light-ver {
-  background-color: #ecf2f6;
+  background-color: #eef3f7;
   color: #111827;
   word-spacing: -1px;
 }
-.light-ver {
-  background-color: #ffffff;
+
+.light-ver .hero-section {
+  background: url("/assets/imgs/hero-blue.jpg") no-repeat center center / cover;
 }
 
-.light-ver .nav a {
-  color: #333333;
-}
-
-.light-ver .nav a:hover {
-  color: #000000;
-}
 .light-ver .card-icon {
   font-size: 1.8rem;
   font-weight: 100;

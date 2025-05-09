@@ -1,70 +1,68 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".header");
-  const nav = document.querySelector(".nav");
-  const category = document.getElementById("category");
+  const body = document.body;
+
+  // ✅ 다크/라이트 모드 토글
+  const modeBtn = document.getElementById("mode-toggle");
+  const modeIcon = document.getElementById("mode-icon");
+
+  modeBtn?.addEventListener("click", () => {
+    const isLight = body.classList.contains("light-ver");
+
+    if (isLight) {
+      body.classList.remove("light-ver");
+      body.classList.add("dark-ver");
+      modeIcon.classList.remove("ri-sun-line");
+      modeIcon.classList.add("ri-moon-fill");
+      modeIcon.classList.remove("bg-white", "text-black");
+      modeIcon.classList.add("bg-gray-500", "text-white");
+    } else {
+      body.classList.remove("dark-ver");
+      body.classList.add("light-ver");
+      modeIcon.classList.remove("ri-moon-fill");
+      modeIcon.classList.add("ri-sun-line");
+      modeIcon.classList.remove("bg-gray-500", "text-white");
+      modeIcon.classList.add("bg-white", "text-black");
+    }
+  });
+
+  // ✅ 모바일 메뉴 토글 (햄버거 버튼)
   const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-main-menu");
+  const icon = hamburger.querySelector("i");
+  let isMenuOpen = false;
 
-  const mobileHeader = document.querySelector(".mobile-header");
-  const desktopHeader = document.querySelector(".desktop-header");
+  hamburger?.addEventListener("click", () => {
+    isMenuOpen = !isMenuOpen;
 
-  function isMobile() {
-    return window.innerWidth <= 1235; // 모바일~1235px
-  }
+    // 아이콘 변경
+    icon?.classList.toggle("ri-menu-line", !isMenuOpen);
+    icon?.classList.toggle("ri-close-line", isMenuOpen);
 
-  function updateNavDisplay() {
-    if (isMobile()) {
-      nav.style.display = nav.classList.contains("open") ? "flex" : "none";
-      if (mobileHeader) mobileHeader.style.display = "flex";
-      if (desktopHeader) desktopHeader.style.display = "none";
+    if (isMenuOpen) {
+      // hidden 먼저 제거
+      mobileMenu.classList.remove("hidden");
+      // 열기
+      mobileMenu.classList.remove("slide-fade-up");
+      mobileMenu.classList.add("slide-fade-down");
     } else {
-      nav.style.display = "flex";
-      nav.classList.remove("open");
-      if (mobileHeader) mobileHeader.style.display = "none";
-      if (desktopHeader) desktopHeader.style.display = "flex";
-    }
-  }
+      // 닫기
+      mobileMenu.classList.remove("slide-fade-down");
+      mobileMenu.classList.add("slide-fade-up");
 
-  window.addEventListener("scroll", () => {
-    const currentScroll =
-      window.pageYOffset || document.documentElement.scrollTop;
-    const categoryTop = category.offsetTop;
-
-    // ✅ 헤더 shrink
-    if (currentScroll > 50) {
-      header.classList.add("shrink");
-    } else {
-      header.classList.remove("shrink");
-    }
-
-    // ✅ nav 숨김/복구 (데스크탑만)
-    if (!isMobile()) {
-      if (currentScroll > categoryTop - 80) {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "flex";
-      }
+      // 닫힘 후 hidden 처리
+      setTimeout(() => {
+        if (!isMenuOpen) {
+          mobileMenu.classList.add("hidden");
+        }
+      }, 400); // css duration과 일치
     }
   });
 
-  // ✅ 햄버거 클릭 시 nav 토글
-  hamburger.addEventListener("click", () => {
-    if (isMobile()) {
-      nav.classList.toggle("open");
-      nav.style.display = nav.classList.contains("open") ? "flex" : "none";
+  // ✅ 외부 링크는 새 창으로 열기
+  document.querySelectorAll('a[href^="http"]').forEach((link) => {
+    if (!link.hasAttribute("target")) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
     }
   });
-
-  // ✅ 화면 크기 바뀔 때 nav 초기화
-  window.addEventListener("resize", updateNavDisplay);
-  // ✅ 처음 로드될 때 nav 상태 맞추기
-
-  updateNavDisplay();
-});
-
-// ✅ target=_blank 추가
-document.querySelectorAll('a[href^="http"]').forEach((link) => {
-  if (!link.hasAttribute("target")) {
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "noopener noreferrer"); // 보안상 권장
-  }
 });
