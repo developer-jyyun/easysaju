@@ -194,7 +194,6 @@ html {
 
 /* 메인 */
 main {
-  /* background-color: #000000; */
   padding-top: 8%;
   position: relative;
 }
@@ -464,23 +463,22 @@ main {
 .custom-prev {
   left: 0 !important;
   z-index: 50;
-  /* border-radius: 25px 0 0 25px; */
+  border-radius: 20px 0 0 20px;
 }
 .custom-next {
   right: 0 !important;
   z-index: 50;
-  /* border-radius: 0 25px 25px 0; */
+  border-radius: 0 20px 20px 0;
 }
 .custom-prev,
 .custom-next {
-  top: 19% !important;
+  top: 25% !important;
   bottom: 0 !important;
-  height: 100% !important;
+  height: 80% !important;
   width: 50px !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.2);
   z-index: 10;
   pointer-events: auto;
 }

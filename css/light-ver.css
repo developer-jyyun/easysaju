@@ -1,6 +1,6 @@
 /* ✅ 라이트모드 */
 .light-ver {
-  background-color: #eef3f7;
+  background-color: #fff;
   color: #111827;
   word-spacing: -1px;
 }
@@ -9,15 +9,74 @@
   background: url("/assets/imgs/hero-blue.jpg") no-repeat center center / cover;
 }
 
-.light-ver .card-icon {
-  font-size: 1.8rem;
-  font-weight: 100;
-  width: 40%;
-  border-radius: 10px 0px 0px 10px;
+.light-ver .gradient-border > div {
+  background: rgba(255, 255, 255, 0.8);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.light-ver .card-title {
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  width: 80%;
+.light-ver .gradient-border:hover {
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(160, 190, 230, 0.3);
+}
+
+.light-ver .gradient-border > div h3 {
+  color: #333c55;
+}
+.light-ver .gradient-border > div p {
+  color: #3a4052;
+}
+.light-ver .gradient-border > div:hover h3 {
+  color: #0f054e;
+}
+
+.light-ver .custom-prev,
+.light-ver .custom-next {
+  background-color: rgb(51, 60, 85, 0.9);
+}
+.light-ver .sd {
+  box-shadow: 2px 4px 8px rgba(150, 180, 200, 0.3);
+  color: #333c55;
+  border: 2px solid #b7d8de;
+  background: radial-gradient(
+    circle at top left,
+    rgb(229 255 253 / 50%),
+    rgb(255 242 238),
+    rgb(192 222 255 / 30%)
+  );
+  letter-spacing: 0.5px;
+}
+
+.light-ver .sd:hover {
+  color: #254159;
+  border: 1.5px solid #a0cbe0;
+  box-shadow: 2px 6px 12px rgba(160, 190, 230, 0.6);
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.light-ver .sd {
+  box-shadow: 2px 4px 8px rgba(150, 180, 200, 0.3);
+  color: #333c55;
+  border: 2px solid #b7d8de;
+  background: radial-gradient(
+    circle at top left,
+    rgba(229, 255, 253, 0.6),
+    #fffceb,
+    rgba(192, 222, 255, 0.5)
+  );
+
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.light-ver .sd:hover {
+  border: 2px solid #a0cbe0;
+  box-shadow: 4px 8px 16px rgba(160, 190, 230, 0.5);
+  background: radial-gradient(
+    circle at top left,
+    rgba(229, 255, 253, 0.5),
+    rgb(255, 255, 255),
+    rgba(192, 222, 255, 0.3)
+  );
+  font-weight: bold;
+  color: #1f334b;
 }

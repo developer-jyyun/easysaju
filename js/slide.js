@@ -59,7 +59,7 @@ const basicSwiper = new Swiper(".basicSwiper", {
     prevEl: ".basicSwiper .custom-prev",
     disabledClass: "swiper-button-hidden",
   },
- breakpoints: {
+  breakpoints: {
     0: { slidesPerView: 1.2 },
     640: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
@@ -76,7 +76,7 @@ const jabbyunSwiper = new Swiper(".jabbyunSwiper", {
     prevEl: ".jabbyunSwiper .custom-prev",
     disabledClass: "swiper-button-hidden",
   },
- breakpoints: {
+  breakpoints: {
     0: { slidesPerView: 1.2 },
     640: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
